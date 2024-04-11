@@ -1,5 +1,6 @@
 ---
 import '@/assets/sass/layouts/default.scss';
+import Header from '@/components/section/Header.astro';
 ---
 
 <!doctype html>
@@ -13,6 +14,7 @@ import '@/assets/sass/layouts/default.scss';
   </head>
   <body>
     <main>
+      <Header />
       <slot />
     </main>
     <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
