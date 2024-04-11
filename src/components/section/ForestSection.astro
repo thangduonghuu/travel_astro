@@ -1,10 +1,37 @@
 ---
-import Container from '@/components/core/Container';
 import '@/assets/sass/components/section/forest-section.scss';
-import Icon from '../core/Icon';
+import Container from '@/components/core/Container';
+import Icon from '@/components/core/Icon';
+
+const backGroundList = [
+  {
+    name: 'forest',
+    status: 'active',
+  },
+  {
+    name: 'brige',
+    status: 'inactive',
+  },
+  {
+    name: 'landing',
+    status: 'inactive',
+  },
+  {
+    name: 'tracking',
+    status: 'inactive',
+  },
+  {
+    name: 'brige',
+    status: 'inactive',
+  },
+];
+
+
+
+
 ---
 
-<section class="forest-section">
+<section class="forest-section forest-section--forest">
   <Container className="forest-section__container">
     <div class="forest-section__container__wrapper">
       <div class="forest-section__container__title">

@@ -1,9 +1,12 @@
 .forest-section {
   height: 100dvh;
-  background-image: url('/src/assets/images/ForestStayImage.png');
   background-repeat: no-repeat;
   background-size: cover;
   color: $color-white;
+
+  &--forest {
+    background-image: url('/src/assets/images/ForestStayImage.png');
+  }
 
   &__container {
     height: 100%;
