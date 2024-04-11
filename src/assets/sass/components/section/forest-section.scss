@@ -15,17 +15,23 @@
     }
 
     &__scroll-button {
-      position: relative;
-
       .circle {
         width: 36px;
         height: 40px;
-      }
-      .arrow-down {
-        top: 12px;
-        left: 10px;
-        position: absolute;
-        animation: arrow-down 1s infinite;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 30%;
+          width: 36px;
+          height: 50%;
+          left: 22%;
+          background-image: url('/src/assets/icons/arrow-down.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          animation: arrow-down 1s infinite;
+        }
       }
     }
 
