@@ -1,0 +1,97 @@
+html,
+body {
+  overscroll-behavior: none;
+}
+
+body {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  color: $color-base-black;
+  overflow-x: hidden;
+}
+
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.remove_mobile_size {
+  @include breakpoint(xs) {
+    display: none;
+  }
+}
+
+:root {
+  font-size: $font-size-base;
+
+  @include breakpoint(xl) {
+    font-size: 0.925rem;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 0.875rem;
+  }
+
+  @include breakpoint(md) {
+    font-size: 0.75rem;
+  }
+
+  @include breakpoint(xs) {
+    font-size: 4.25vw;
+  }
+}
+
+#viewport {
+  margin: 0 auto;
+  position: relative;
+  color: $color-dark;
+  background-color: $color-light;
+
+  width: 100%;
+  max-width: map-get($breakpoints, xxl);
+
+  // Keep footer at the bottom
+  display: grid;
+  grid-template-rows: 1fr auto;
+  @include dvh(100, min-height);
+
+  > main {
+    padding-bottom: calc-rem(42);
+  }
+}
+
+.section {
+  z-index: 10;
+  position: relative;
+  background-color: $color-light;
+}
+
+.anim {
+  @keyframes textSlideUp {
+    0% {
+      transform: translateY(calc-rem(200));
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  &-group {
+    overflow: hidden;
+  }
+
+  &--text-slide-up {
+    overflow: hidden;
+
+    * {
+      transform: translateY(calc-rem(200));
+      animation: textSlideUp 600ms ease-out forwards;
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}n) {
+          animation-delay: #{$i * 200}ms;
+        }
+      }
+    }
+  }
+}

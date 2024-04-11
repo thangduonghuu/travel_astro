@@ -1,6 +1,4 @@
 ---
-import Header from '@/components/section/Header';
-import Footer from '@/components/section/Footer.astro';
 import '@/assets/sass/layouts/default.scss';
 ---
 
@@ -14,11 +12,9 @@ import '@/assets/sass/layouts/default.scss';
     <title>Profolio Duong Huu Thang</title>
   </head>
   <body>
-    <Header client:load />
     <main>
       <slot />
     </main>
-    <Footer />
     <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script is:inline>
       AOS.init();
