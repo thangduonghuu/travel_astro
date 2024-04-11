@@ -28,6 +28,16 @@
     transform: rotate(-90deg);
   }
 
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+    i {
+      cursor: pointer;
+    }
+  }
+
   .audio-rain {
     position: absolute;
     visibility: hidden;
