@@ -1,0 +1,31 @@
+---
+import Icon from '@/components/core/Icon';
+import '@/assets/sass/components/main/footer.scss';
+const ListSection = [
+  { name: '', class: 'item-0' },
+  { name: 'Forest stay', class: 'item-1' },
+  { name: 'Sunset', class: 'item-2' },
+  { name: 'Tree House', class: 'item-3' },
+  { name: 'Forest Track', class: 'item-4' },
+  { name: 'Tracking', class: 'item-5' },
+];
+---
+
+<footer class="main-footer">
+  <div class="main-footer__container">
+    <Icon name="menu" className="main-footer__logo" />
+    <div class="main-footer__container__section">
+      <ul class="main-footer__container__list">
+        {
+          ListSection.map((item) => {
+            return (
+              <li class={`main-footer__container__item main-footer__container__item--${item.class}`}>
+                {item.name}
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+</footer>

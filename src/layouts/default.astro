@@ -1,6 +1,7 @@
 ---
 import '@/assets/sass/layouts/default.scss';
 import Header from '@/components/section/Header';
+import Footer from '@/components/section/Footer.astro';
 ---
 
 <!doctype html>
@@ -16,6 +17,7 @@ import Header from '@/components/section/Header';
     <main>
       <Header />
       <slot />
+      <Footer />
     </main>
     <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script is:inline>
