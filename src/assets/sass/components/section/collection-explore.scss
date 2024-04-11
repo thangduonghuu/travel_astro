@@ -1,0 +1,19 @@
+.section-collection-explore {
+  padding-top: 6rem;
+
+  @include breakpoint(xs) {
+    margin-top: 3rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    padding-bottom: 1em;
+    color: $color-brand-1;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint(xs) {
+      font-size: 1.35rem;
+    }
+  }
+}

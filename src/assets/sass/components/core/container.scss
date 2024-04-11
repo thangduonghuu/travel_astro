@@ -1,0 +1,19 @@
+.container {
+  margin: 0 auto;
+
+  &--large {
+    width: 95%;
+  }
+
+  &--small {
+    width: 65%;
+
+    @include breakpoint(xl) {
+      width: 80%;
+    }
+
+    @include breakpoint(md) {
+      width: 95%;
+    }
+  }
+}

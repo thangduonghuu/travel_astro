@@ -1,0 +1,72 @@
+.radio-group {
+  $self: &;
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &--column {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  &__item {
+    gap: 0.35rem;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+
+    * {
+      opacity: 0.7;
+      color: $color-dark;
+    }
+  }
+
+  &__box {
+    position: relative;
+
+    &,
+    &::before {
+      @include box(calc-rem(24));
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      background-color: currentColor;
+    }
+
+    &::before {
+      mask: url('/src/assets/icons/diamond-line.svg') no-repeat center;
+    }
+
+    &::after {
+      opacity: 0;
+      @include center-parent;
+      @include box(calc-rem(12));
+      mask: url('/src/assets/icons/diamond-solid.svg') no-repeat center;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      & ~ * {
+        opacity: 1;
+        color: $color-brand-1;
+      }
+
+      & + #{$self}__box::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--light {
+    #{$self}__item * {
+      color: $color-white;
+    }
+  }
+}

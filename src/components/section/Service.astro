@@ -1,0 +1,72 @@
+---
+import cn from 'classnames';
+import Container from '@/components/core/Container';
+import { Image } from 'astro:assets';
+import Icon from '@/components/core/Icon';
+import Button from '@/components/core/Button';
+
+import serviceLogo1 from '@/assets/images/expertise-log-1.png';
+import serviceLogo2 from '@/assets/images/expertise-log-2.png';
+import '@/assets/sass/components/section/service.scss';
+
+const service = [
+  {
+    icon: 'develop-icon',
+    title: 'Development',
+    color: 'develop',
+    description:
+      'Meticulous front-end development, ensuring every line of code is a pixel-perfect masterpiece.',
+  },
+  {
+    icon: 'web-design-icon',
+    title: 'Web Design',
+    color: 'web',
+    description:
+      'With a degree and four years of expertise, experience digital elevation with visually stunning and user-friendly interfaces.',
+  },
+  {
+    icon: 'ecommerce-icon',
+    title: 'E-commerce',
+    color: 'ecommerce',
+    description:
+      'Online shopping experiences that not only captivate but also convert, ensuring your eCommerce stands out in the digital marketplace.',
+  },
+];
+---
+
+<section class="section-services" id="section-services">
+  <Container className="section-services__container">
+    <h1>services</h1>
+    <h2>My expertise</h2>
+    <div class="section-services__experience">
+      {
+        service.map((item) => {
+          return (
+            <div class={cn(['section-services__box', `section-services__box--${item.color}`])}>
+              <Icon name={item.icon} size="large" />
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          );
+        })
+      }
+      <!-- 
+      <Image
+        class="section-services__image section-services__image--left remove_mobile_size"
+        src={serviceLogo1}
+        width={serviceLogo1.width / 1.5}
+        height={serviceLogo1.height / 1.5}
+        alt="service-log-1"
+      /> -->
+
+      <!-- <Image
+        class="section-services__image section-services__image--right remove_mobile_size"
+        src={serviceLogo2}
+        width={serviceLogo2.width / 1.5}
+        height={serviceLogo2.height / 1.5}
+        alt="service-log-2"
+      /> -->
+    </div>
+    <Button className="section-services__button">Get in touch !</Button>
+  </Container>
+</section>

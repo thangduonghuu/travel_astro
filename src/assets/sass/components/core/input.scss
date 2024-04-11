@@ -1,0 +1,22 @@
+.input {
+  background-color: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  position: relative;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid $color-black;
+  font-size: calc-rem(18);
+  width: 100%;
+  color: $color-black;
+  font-weight: bold;
+
+  &:focus {
+    outline: none;
+  }
+
+  &--textarea {
+    height: 5em;
+    width: 100%;
+  }
+}

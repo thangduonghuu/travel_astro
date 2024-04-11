@@ -1,0 +1,100 @@
+.experience-section {
+  height: 100%;
+
+  @include margin-y(calc-rem(80));
+
+  &__container {
+    @include padding-x(calc-rem(250));
+
+    @include breakpoint(xs) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-pink;
+    font-size: calc-rem(40);
+    margin-bottom: calc-rem(50);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    gap: 2rem;
+
+    &--circle {
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    &--line {
+      flex: 1;
+      height: 100%;
+      background-color: #404040;
+      width: calc-rem(1);
+    }
+
+    &__line {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__content {
+      &__title {
+        font-weight: 900;
+
+        &--domain {
+          color: $color-orange;
+        }
+      }
+      &__description {
+        margin-top: 1rem;
+      }
+
+      &--right {
+        width: 12rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+
+        @include breakpoint(xs) {
+          display: none;
+        }
+      }
+      &--left {
+        max-width: calc-rem(750);
+
+        > h3 {
+          font-size: calc-rem(28);
+          color: $color-purple;
+        }
+
+        > h2 {
+          font-size: 21;
+        }
+
+        > p {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

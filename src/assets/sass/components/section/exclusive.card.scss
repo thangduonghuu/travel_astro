@@ -1,0 +1,38 @@
+.exclusive-card {
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 0 1rem rgba($color-dark, 0.2);
+  border-radius: 1rem;
+  background-color: $color-white;
+
+  &__image {
+    display: block;
+    @include box(100%, calc-rem(298));
+    border-radius: calc-rem(8) calc-rem(8) 0 0;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    height: calc-rem(174);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: calc-rem(10) calc-rem(12);
+
+    > div {
+      max-width: calc-rem(330);
+      @include line-clamp(3);
+
+      @include breakpoint(xs) {
+        font-size: 0.9rem;
+        line-height: calc-rem(32);
+        max-width: calc-rem(270);
+      }
+    }
+  }
+
+  @include breakpoint(xs) {
+    min-width: calc-rem(320);
+  }
+}

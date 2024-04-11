@@ -1,0 +1,70 @@
+@mixin anchor-pseudo($has-root: true) {
+  $root-selector: '';
+  @if $has-root == true {
+    $root-selector: '&,';
+  }
+  #{$root-selector} &:hover,
+  &:focus,
+  &:active,
+  &:visited,
+  &:focus:not(:active),
+  &:visited:not(:active) {
+    @content;
+  }
+}
+
+@mixin no-user-action {
+  user-select: none;
+  pointer-events: none;
+}
+
+@mixin webkit-scroll() {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin line-clamp($lines: 999) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+}
+
+@mixin first-children($n: 1) {
+  &:nth-of-type(-n + #{$n}) {
+    @content;
+  }
+}
+
+@mixin last-children($n: 1) {
+  &:nth-last-of-type(-n + #{$n}) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin dvh($value, $property: height) {
+  #{$property}: #{$value}vh; // Fallback
+  #{$property}: #{$value}dvh;
+}
+
+@mixin line-height-crop($line-height: 1.25) {
+  &::before {
+    display: block;
+    @include box-pseudo(0);
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}

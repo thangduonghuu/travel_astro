@@ -1,0 +1,38 @@
+$breakpoints: (
+  xs: 640px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
+  xl: 1536px,
+  xxl: 1920px,
+);
+
+@mixin breakpoint($breakpoint, $direction: max) {
+  // check if the supplied breakpoint exists in our breakpoints map
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // check if we are writing styles for larger or smaller screens
+    @if $direction == min {
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @media (max-width: ($breakpoint-value - 0.5px)) {
+        @content;
+      }
+    }
+
+    // use the custom value if the breakpoint is not part of the pre-defined list
+  } @else {
+    @if $direction == min {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.icon {
+  display: block;
+
+  svg {
+    @include box(100%);
+  }
+
+  &--inline {
+    display: inline-block;
+  }
+
+  &--small {
+    @include box(calc-rem(20));
+  }
+
+  &--medium {
+    @include box(calc-rem(24));
+  }
+
+  &--large {
+    @include box(calc-rem(32));
+  }
+}

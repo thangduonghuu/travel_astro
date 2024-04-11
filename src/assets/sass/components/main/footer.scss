@@ -1,0 +1,108 @@
+.main-footer {
+  background-color: #ffefe4;
+  height: 50dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include breakpoint(xs) {
+    height: 100%;
+    gap: calc-rem(60);
+  }
+
+  &__container {
+    display: flex;
+
+    h1 {
+      color: $color-purple;
+      text-transform: uppercase;
+      max-width: calc-rem(550);
+    }
+    h2 {
+      font-size: calc-rem(40);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: normal;
+      max-width: calc-rem(550);
+
+      @include breakpoint(xs) {
+        font-size: calc-rem(32);
+      }
+    }
+
+    p {
+      max-width: calc-rem(550);
+
+      @include breakpoint(xs) {
+        font-size: calc-rem(14);
+      }
+    }
+
+    @include breakpoint(xs) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: calc-rem(100);
+    justify-content: center;
+    gap: 1rem;
+
+    @include breakpoint(xs) {
+      padding-left: 0;
+      padding-bottom: calc-rem(20);
+    }
+  }
+
+  &__form {
+    flex: 1;
+
+    &__container {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-areas: 'name surname' 'email email' 'message message' 'button button';
+    }
+
+    &__field {
+      &--name {
+        grid-area: name;
+      }
+      &--email {
+        grid-area: email;
+      }
+      &--surname {
+        grid-area: surname;
+      }
+      &--message {
+        grid-area: message;
+      }
+
+      &--button {
+        grid-area: button;
+        display: flex;
+        gap: 1.5rem;
+
+        > button {
+          padding: calc-rem(10) calc-rem(24);
+          font-size: calc-rem(18);
+        }
+
+        @include breakpoint(xs) {
+          font-size: calc-rem(14);
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  &__social-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+    gap: 1rem;
+  }
+}

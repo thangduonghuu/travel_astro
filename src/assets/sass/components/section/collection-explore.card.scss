@@ -1,0 +1,35 @@
+.collection-explore-card {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  @include breakpoint(xs, min) {
+    border-radius: calc-rem(8);
+  }
+
+  &__image {
+    display: block;
+    object-fit: cover;
+    @include box(100%, auto);
+  }
+
+  &__mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color-dark, 0.2);
+    @include fill-parent($z-index: 10);
+  }
+
+  &__content {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc-rem(36);
+    line-height: 1.35;
+    text-shadow: 0 0 0.75rem rgba($color-black, 0.5);
+
+    @include breakpoint(xs) {
+      font-size: calc-rem(24);
+    }
+  }
+}

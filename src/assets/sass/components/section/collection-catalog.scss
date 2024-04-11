@@ -1,0 +1,52 @@
+.section-collection-catalog {
+  margin: calc-rem(60) 0 calc-rem(80);
+
+  @include breakpoint(xs) {
+    margin: calc-rem(40) 0 calc-rem(20);
+  }
+
+  &__container {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    color: $color-brand-1;
+    @include box(calc-rem(60));
+  }
+
+  &__title {
+    font-size: calc-rem(34);
+    text-transform: uppercase;
+    color: $color-brand-1;
+    position: relative;
+    text-align: center;
+    margin-bottom: calc-rem(30);
+
+    &::after {
+      background-color: $color-brand-1;
+      @include box-pseudo(calc-rem(40), calc-rem(1));
+      @include absolute($left: 45%, $bottom: calc-rem(-15));
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 4rem;
+    column-gap: 2rem;
+
+    > * {
+      width: calc(50% - 1rem);
+    }
+
+    @include breakpoint(xs) {
+      > * {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+.section-key-features {
+  padding: calc-rem(80) 0;
+  @include dvh(100, min-height);
+
+  @include breakpoint(md, min) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include breakpoint(xs) {
+    margin: calc-rem(60) 0;
+  }
+
+  &__container {
+    display: flex;
+    gap: 2.5rem;
+
+    @include breakpoint(md) {
+      flex-wrap: wrap;
+      gap: 5rem;
+    }
+
+    @include breakpoint(xs) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    text-transform: uppercase;
+    color: $color-brand-1;
+    text-align: center;
+    font-size: calc-rem(80);
+    line-height: 1;
+    padding-bottom: calc-rem(60);
+    @include line-height-crop;
+
+    @include breakpoint(xs) {
+      font-size: calc-rem(40);
+      padding-bottom: calc-rem(30);
+    }
+  }
+
+  &__group {
+    $self: &;
+
+    &__content {
+      padding-top: calc-rem(20);
+      opacity: 0.5;
+
+      @include breakpoint(xs) {
+        font-size: calc-rem(16);
+      }
+    }
+
+    &__image {
+      position: relative;
+
+      img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &--left {
+      flex: 20%;
+
+      #{$self}__image {
+        padding-bottom: 185%;
+
+        img {
+          @include fill-parent;
+        }
+
+        @include breakpoint(md) {
+          padding-bottom: 150%;
+        }
+      }
+
+      @include breakpoint(md) {
+        order: 2;
+      }
+
+      @include breakpoint(xs) {
+        width: 70%;
+      }
+    }
+
+    &--center {
+      flex: 62%;
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint(md) {
+        order: 1;
+        flex: 100%;
+      }
+    }
+
+    &--right {
+      flex: 18%;
+      padding-top: calc-rem(60);
+
+      #{$self}__image {
+        padding-bottom: 105%;
+
+        img {
+          @include fill-parent;
+        }
+      }
+
+      @include breakpoint(md) {
+        order: 3;
+        padding-top: 40%;
+      }
+
+      @include breakpoint(xs) {
+        padding: 0;
+        width: 70%;
+        margin-left: auto;
+      }
+    }
+  }
+}

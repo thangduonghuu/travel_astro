@@ -1,0 +1,50 @@
+{
+  "name": "thang-html",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "build:dev": "npx rimraf dist && astro check && astro build",
+    "build:digitalocean": "npm install --production=false && npm run build && npm ci",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "engines": {
+    "node": "18",
+    "pnpm": "8"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/react": "^3.0.6",
+    "@astrojs/vue": "^4.0.8",
+    "@gsap/react": "^2.1.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^3.6.1",
+    "autoprefixer": "^10.4.16",
+    "classnames": "^2.3.2",
+    "cssnano": "^6.0.1",
+    "gasp": "^0.0.2",
+    "gsap": "^3.12.5",
+    "lodash": "^4.17.21",
+    "mobile-detect": "^1.4.5",
+    "motion": "^10.17.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-html-comment": "^2.0.16",
+    "sass": "^1.69.5",
+    "sharp": "^0.31.0",
+    "split-type": "^0.3.4",
+    "swiper": "^11.0.5",
+    "typescript": "^5.3.2",
+    "usehooks-ts": "^2.9.1",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2"
+  }
+}

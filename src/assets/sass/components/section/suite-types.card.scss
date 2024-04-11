@@ -1,0 +1,170 @@
+$card: '.suite-type-card';
+
+#{$card} {
+  @include box(100%);
+  color: $color-white;
+  text-align: center;
+
+  &__image {
+    display: block;
+    object-fit: cover;
+    @include box(100%);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    @include fill-parent($z-index: 15);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+
+    > * {
+      line-height: 1.15;
+      text-shadow: 0 0 0.25em rgba($color-black, 0.2);
+    }
+  }
+
+  &__room-name {
+    display: none;
+  }
+
+  &__features {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20% 5% 2rem;
+    background: linear-gradient(to top, rgba($color-black, 0.4), transparent);
+
+    > li {
+      max-width: 22%;
+      margin: 0 auto;
+    }
+
+    @include breakpoint(md) {
+      gap: 0.75rem;
+      flex-direction: column;
+
+      > li {
+        max-width: none;
+      }
+    }
+  }
+}
+
+$slide: '.accordion__slide';
+
+.accordion {
+  #{$slide} {
+    #{$card} {
+      &__image {
+        transition: transform 0.75s ease;
+        transform: scale(1.5);
+      }
+
+      &__number {
+        display: none;
+      }
+
+      &__features {
+        opacity: 0;
+        transition: none;
+      }
+    }
+
+    &--active #{$card} {
+      &__image {
+        transform: scale(1);
+      }
+
+      &__features {
+        opacity: 1;
+        transition: opacity 0.5s 0.75s ease;
+      }
+
+      &__title {
+        padding-top: 5rem;
+      }
+
+      &__room-name {
+        display: block;
+        font-size: 2.125rem;
+
+        @include breakpoint(sm) {
+          font-size: 1.5rem;
+        }
+      }
+
+      &__suite-type {
+        font-size: 5rem;
+        white-space: normal;
+        writing-mode: initial;
+        text-orientation: initial;
+        transform: none;
+        position: static;
+
+        * {
+          display: block;
+        }
+
+        @include breakpoint(sm) {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+
+  &--horizontal {
+    #{$card} {
+      &__number {
+        font-size: 1.75rem;
+        display: block !important;
+        @include center-parent(x, $bottom: 1rem);
+      }
+
+      &__suite-type {
+        font-size: 1.75rem;
+        white-space: nowrap;
+        writing-mode: vertical-lr;
+        text-orientation: mixed;
+        transform: scale(-1) translateX(50%);
+        position: absolute;
+        left: 50%;
+        bottom: 5rem;
+
+        * {
+          display: inline;
+        }
+      }
+    }
+
+    #{$slide}--active #{$card} {
+      &__number {
+        display: none !important;
+      }
+    }
+  }
+
+  &--vertical {
+    #{$card} {
+      &__suite-type {
+        font-size: 1.75rem;
+        white-space: nowrap;
+        @include center-parent;
+
+        @include breakpoint(sm) {
+          font-size: 1.25rem;
+        }
+
+        * {
+          display: inline;
+        }
+      }
+    }
+  }
+}

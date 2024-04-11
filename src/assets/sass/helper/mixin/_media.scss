@@ -1,0 +1,23 @@
+@mixin media-touch-screen {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin media-motion-allow {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin media-motion-reduce {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin supports-safari-only {
+  @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+    @content;
+  }
+}

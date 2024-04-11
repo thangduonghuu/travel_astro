@@ -1,0 +1,73 @@
+---
+import Container from '@/components/core/Container';
+import '@/assets/sass/components/section/experience.scss';
+
+const experiences = [
+  {
+    year: 'May 2021 - present',
+    title: 'USA project at NFQ Asia',
+    domain: '- Car rental',
+    roles: '- Frontend developer, Mobile developer',
+    description:
+      'This is a project for a rental car company where customers can reserve a vehicle and the admin can oversee all reservations for the vehicle and designate the driver to pick up the customer. After the customer arrives at the airport, the driver will pick them up and deliver the car for them at the hub. When the customer finishes their journey, they will need to return the car to the hub, and once that process is complete, the driver will drop the customer off at the airport. Over the past year, I have learn and dedicated my focus and efforts to working on the mobile site for 1.5 years. This commitment aimed at supporting the team and ensuring the delivery of optimal solutions for the successful completion of the project',
+  },
+  {
+    year: 'Dec 2023 - present',
+    title: 'Singapore project at NFQ Asia',
+    domain: 'Hotel',
+    roles: 'Frontend developer',
+    description:
+      "The main purpose of the project is to make a landing page for a hotel in Singapore. As the main developer, my job is to create the website's fundamental HTML and CSS elements and add eye-catching animations to improve the viewer experience.",
+  },
+  {
+    year: '2017 - 2018',
+    title: 'Student at CanTho University',
+    roles: 'Frontend developer , Backend developer',
+    description:
+      'The application helps Information Technology students to focus on developing skills in project management, This is the longest project I have ever been on, it takes 9 months. the project is provide the feature to help the user manage the process of the project, they can organize a team, create the task, subtask and assign it for the team, Beside that with this application the user they can create a meeting for all member of the team to discuss',
+  },
+];
+---
+
+<section class="experience-section" id="experience-section">
+  <Container className="experience-section__container">
+    <h1 class="experience-section__title">Experience</h1>
+    <div class="experience-section__content">
+      <ul class="experience-section__list">
+        {
+          experiences.map((item, index) => {
+            return (
+              <li class="experience-section__item">
+                <div
+                  class="experience-section__item__content--right"
+                  data-aos="fade-up"
+                  data-aos-duration={index * 300}
+                >
+                  <div>
+                    <h2> {item.year} </h2>
+                  </div>
+                  <div class="experience-section__item__line">
+                    <div class="experience-section__item--circle" />
+                    <div class="experience-section__item--line" />
+                  </div>
+                </div>
+                <div
+                  class="experience-section__item__content--left"
+                  data-aos="fade-up"
+                  data-aos-duration={index * 300}
+                >
+                  <h3 class="experience-section__item__content__title"> {item.title} </h3>
+                  <h4 class="experience-section__item__content__title"> {item.roles} </h4>
+                  <h4 class="experience-section__item__content__title experience-section__item__content__title--domain ">
+                    {item.domain}
+                  </h4>
+                  <p class="experience-section__item__content__description"> {item.description} </p>
+                </div>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </Container>
+</section>

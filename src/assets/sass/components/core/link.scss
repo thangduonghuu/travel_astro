@@ -1,0 +1,18 @@
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+
+  @include anchor-pseudo {
+    color: $color-brand-2;
+  }
+
+  &--light {
+    @include anchor-pseudo {
+      color: $color-white;
+    }
+  }
+
+  &--plain {
+    text-decoration: none;
+  }
+}

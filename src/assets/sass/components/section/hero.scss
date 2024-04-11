@@ -1,0 +1,141 @@
+.section-hero {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  @include dvh(100);
+
+  @include breakpoint(xs) {
+    height: 100%;
+    gap: 5rem;
+  }
+
+  &__container {
+    padding-top: calc-rem(80);
+
+    @include breakpoint(xs) {
+      padding-top: calc-rem(120);
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint(xs) {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 150px;
+        left: 80%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__center {
+    display: flex;
+
+    .image-3 {
+      transform: translateY(-100px);
+    }
+
+    @include breakpoint(xs) {
+      position: relative;
+      flex-direction: column;
+
+      img {
+        position: absolute;
+        top: 150px;
+        left: 80%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
+    }
+  }
+  &__logo {
+    height: calc-rem(80);
+    background-color: $color-purple;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &__slide {
+      height: 100%;
+      display: inline-block;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      > img {
+        margin: 0 40px;
+      }
+
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+
+    &__title {
+      font-size: calc-rem(70);
+      text-align: center;
+
+      &--highline {
+        color: red;
+        position: relative;
+        &::after {
+          position: absolute;
+          content: url('/src/assets/icons/line.svg');
+          left: 0;
+          top: 30%;
+          stroke-dasharray: 2000;
+          width: 100%;
+          height: 100%;
+
+          // Animation
+          // animation: drawLine 2s linear infinite;
+        }
+      }
+
+      @include breakpoint(xs) {
+        font-size: calc-rem(38);
+      }
+    }
+
+    &__description {
+      max-width: calc-rem(650);
+      text-align: center;
+      font-size: calc-rem(21);
+
+      @include breakpoint(xs) {
+        font-size: calc-rem(18);
+      }
+    }
+
+    &__button {
+      font-size: calc-rem(21);
+      background: $color-pink;
+    }
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-150px * 5));
+  }
+}

@@ -1,0 +1,27 @@
+---
+import Header from '@/components/section/Header';
+import Footer from '@/components/section/Footer.astro';
+import '@/assets/sass/layouts/default.scss';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/x-icon" href="/src//assets//favios/favicon.ico" />
+    <title>Profolio Duong Huu Thang</title>
+  </head>
+  <body>
+    <Header client:load />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init();
+    </script>
+  </body>
+</html>

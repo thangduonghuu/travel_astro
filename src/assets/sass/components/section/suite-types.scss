@@ -1,0 +1,6 @@
+.section-suite-types {
+  &__accordion.accordion {
+    aspect-ratio: initial;
+    @include dvh(100);
+  }
+}

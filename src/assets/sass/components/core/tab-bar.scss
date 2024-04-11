@@ -1,0 +1,90 @@
+.tab-bar {
+  $self: &;
+  display: flex;
+  overflow: auto;
+  height: calc-rem(80);
+  padding: 0 calc-rem(20);
+
+  @include breakpoint(xs) {
+    height: calc-rem(60);
+  }
+
+  &__container {
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+
+    @include breakpoint(xs) {
+      gap: 1.5rem;
+      max-width: calc(100vw - calc-rem(45));
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+
+    &,
+    > span {
+      white-space: nowrap;
+    }
+  }
+
+  &--primary {
+    #{$self}__item {
+      font-size: calc-rem(21);
+      color: $color-dark;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      border-bottom: calc-rem(2) solid transparent;
+
+      > span {
+        margin-bottom: 0.75rem;
+      }
+
+      &--active {
+        color: $color-brand-1;
+        border-color: $color-brand-1;
+      }
+
+      @include breakpoint(md) {
+        font-size: calc-rem(16);
+      }
+    }
+  }
+
+  &--secondary {
+    background: linear-gradient(0deg, rgba($color-dark, 0.1) 0% 50%, rgba($color-dark, 0.03) 100%);
+
+    #{$self}__item {
+      gap: 0.4rem;
+      display: flex;
+      align-items: center;
+      font-size: calc-rem(16);
+      color: rgba($color-black, 0.4);
+
+      &::before {
+        display: block;
+        visibility: hidden;
+        background-color: currentColor;
+        @include box-pseudo(calc-rem(14));
+        mask: url('/src/assets/icons/diamond-solid.svg') no-repeat center;
+      }
+
+      &--active {
+        color: $color-brand-1;
+
+        &::before {
+          visibility: visible;
+        }
+      }
+
+      @include breakpoint(xs) {
+        font-size: calc-rem(14);
+      }
+    }
+  }
+}

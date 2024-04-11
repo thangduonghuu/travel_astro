@@ -1,0 +1,44 @@
+---
+import Container from '@/components/core/Container';
+import { Image } from 'astro:assets';
+
+import profileImage from '@/assets/images/profile-image.png';
+import '@/assets/sass/components/section/intro.scss';
+---
+
+<section class="section-intro" id="section-intro">
+  <Container className="section-intro__container">
+    <div class="section-intro__experience">
+      <div class="section-intro__content">
+        <h2 class="section-intro__content__title">about me</h2>
+        <h3 class="section-intro__content__title--large">Front-End Developer</h3>
+        <p>
+          As an active and friendly individual, I am seeking a challenging opportunity to work with
+          new and innovative technologies that will allow me to further expand my knowledge and
+          skills. With my passion for learning and experiance I am confident that I can make
+          valuable contributions to the project and the team, while also achieving my own
+          professional goals and becoming the best version of myself.
+        </p>
+      </div>
+      <div class="section-intro__number">
+        <div class="section-intro__experience__box">
+          <div class="section-intro__experience__box__title">5+</div>
+          <div class="section-intro__experience__box__content">websites coded</div>
+        </div>
+        <div class="section-intro__experience__box">
+          <div class="section-intro__experience__box__title">3+</div>
+          <div class="section-intro__experience__box__content">years of experience</div>
+        </div>
+        <div class="section-intro__experience__box"></div>
+      </div>
+    </div>
+    <div class="section-intro__image">
+      <Image
+        src={profileImage}
+        width={profileImage.width / 2}
+        height={profileImage.height / 2}
+        alt="hero-section-1"
+      />
+    </div>
+  </Container>
+</section>
