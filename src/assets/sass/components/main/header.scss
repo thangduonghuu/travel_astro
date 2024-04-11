@@ -4,7 +4,7 @@
   max-width: calc-rem(150);
   width: 100%;
 
-  background-image: linear-gradient(to right, rgba(0, 0, 0, .5), transparent);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
 
   &__profile {
     display: flex;
@@ -12,6 +12,7 @@
     gap: 1rem;
   }
   &__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -25,5 +26,10 @@
     color: #fff;
     font-size: calc-rem(42);
     transform: rotate(-90deg);
+  }
+
+  .audio-rain {
+    position: absolute;
+    visibility: hidden;
   }
 }
