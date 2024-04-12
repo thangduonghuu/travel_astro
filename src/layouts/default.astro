@@ -16,7 +16,9 @@ import Footer from '@/components/section/Footer.astro';
   <body>
     <main>
       <Header client:load />
-      <slot />
+      <div class="main-container">
+        <slot />
+      </div>
       <Footer />
     </main>
     <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
