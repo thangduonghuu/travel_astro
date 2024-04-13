@@ -14,19 +14,27 @@ const Header = () => {
     <header className="main-header">
       <div className="main-header__container">
         <div className="main-header__profile">
-          <Icon name="account" size="large" />
-          <Icon name="search" size="large" />
+          <div data-aos="fade-right" data-aos-delay="300" data-aos-offset="0">
+            <Icon name="account" size="large" />
+          </div>
+          <div data-aos="fade-right" data-aos-delay="600" data-aos-offset="0">
+            <Icon name="search" size="large" />
+          </div>
         </div>
         <div className="main-header__name">
           <h1>Travel</h1>
         </div>
         <div className="main-header__contact">
-          <span onClick={onClickGithub}>
-            <Icon name="github" size="large" />
-          </span>
-          <span onClick={onClickLinkedin}>
-            <Icon name="linkdin" size="large" />
-          </span>
+          <div data-aos="fade-right" data-aos-delay="900" data-aos-offset="0">
+            <span onClick={onClickGithub}>
+              <Icon name="github" size="large" />
+            </span>
+          </div>
+          <div data-aos="fade-right" data-aos-delay="1200" data-aos-offset="0">
+            <span onClick={onClickLinkedin}>
+              <Icon name="linkdin" size="large" />
+            </span>
+          </div>
         </div>
 
         {/* <iframe src={rainSound} allow="autoplay" className="audio-rain" id="iframeAudio"></iframe> */}
